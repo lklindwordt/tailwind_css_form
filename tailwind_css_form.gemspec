@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors = ["Lars Klindwordt"]
   spec.email = ["info@cobarian.de"]
 
-  spec.summary = "Rails Form Builder for creating easy forms styled with tailwindcss "
+  spec.summary = "Rails Form Builder for creating easy forms styled with tailwindcss"
   spec.description = "tailwind_css_form is a Rails Form Builder with which it is very easy to create forms "\
                      "styled with Tailwind."
   spec.homepage = "https://github.com/lklindwordt/tailwind_css_form"
