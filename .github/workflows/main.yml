@@ -16,6 +16,9 @@ jobs:
         ruby:
           - '2.7.5'
           - '3.0.3'
+        gemfile: [ '7.0' ]
+      env:
+        BUNDLE_GEMFILE: gemfiles/${{ matrix.gemfile }}.gemfile
 
     steps:
     - uses: actions/checkout@v2

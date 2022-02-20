@@ -7,7 +7,7 @@ module TailwindCssForm
 
       private
 
-      def generate_label(method, options)
+      def generate_label(method, options = {})
         label(method, label_text(method, options), label_options(method, options))
       end
 
@@ -17,12 +17,15 @@ module TailwindCssForm
 
       def label_options(method, options)
         {
-          class: label_classes
+          class: label_classes(options)
         }
       end
 
-      def label_classes
-        "block text-sm font-medium text-gray-700"
+      def label_classes(options)
+        classes = %w(block text-sm font-medium text-gray-700)
+        classes << 'hidden' if options[:hide]
+
+        classes
       end
     end
   end

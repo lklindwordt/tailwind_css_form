@@ -7,7 +7,7 @@ module TailwindCssForm
     def field_group(method, options, &block)
       tag.div(class: group_classes(options)) do
         field_group_content(
-          generate_label(method, options),
+          generate_label(method, options[:label]),
           field_wrapper(method, options, &block), 
           method
         )
