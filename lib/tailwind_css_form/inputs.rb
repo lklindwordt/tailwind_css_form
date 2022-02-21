@@ -5,7 +5,9 @@ module TailwindCssForm
     extend ActiveSupport::Autoload
 
     autoload :Base
+    autoload :InputsCollection
     autoload :CheckBox
+    autoload :CollectionCheckBoxes
     autoload :ColorField
     autoload :EmailField
     autoload :PasswordField

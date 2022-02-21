@@ -8,11 +8,12 @@ module TailwindCssForm
       private
 
       def generate_label(method, options = {})
+        options = {} if options.nil?
         label(method, label_text(method, options), label_options(method, options))
       end
 
       def label_text(method, options)
-        options[:text] || object.class.human_attribute_name(method).to_s
+        options[:text] || options[:label] || object.class.human_attribute_name(method).to_s
       end
 
       def label_options(method, options)

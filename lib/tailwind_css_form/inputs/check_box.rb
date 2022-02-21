@@ -8,7 +8,7 @@ module TailwindCssForm
 
       included do
         def check_box_with_tailwind_css(name, options={}, checked_value="1", unchecked_value="0", &block)
-          tag.div(class: 'relative flex items-start') do
+          tag.div(class: check_box_group_class(options[:group])) do
             html = check_box_builder(name, options, checked_value, unchecked_value)
             html.concat(check_box_label(name, options))
             html
@@ -37,6 +37,13 @@ module TailwindCssForm
         tag.div(class: 'ml-3 text-sm') do
           generate_label(name, options)
         end
+      end
+
+      def check_box_group_class(options)
+        options = {} if options.nil?
+        classes = %w(relative flex items-start)
+        classes << options[:class].split(' ') if options.key?(:class)
+        classes
       end
     end
   end

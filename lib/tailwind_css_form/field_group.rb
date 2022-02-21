@@ -4,7 +4,10 @@ module TailwindCssForm
   module FieldGroup
     extend ActiveSupport::Concern
 
-    def field_group(method, options, &block)
+    def field_group(*args, &block)
+      options = args.extract_options!
+      method = args.first
+      
       tag.div(class: group_classes(options)) do
         field_group_content(
           generate_label(method, options[:label]),
