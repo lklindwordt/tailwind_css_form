@@ -7,8 +7,8 @@ module TailwindCssForm
 
       private
 
-      def inputs_collection(name, collection, value, text, options={})
-        field_group_builder(name, options) do 
+      def inputs_collection(name, collection, value, text, options = {})
+        field_group_builder(name, options) do
           inputs = ActiveSupport::SafeBuffer.new
 
           collection.each_with_index do |obj, i|
@@ -33,7 +33,9 @@ module TailwindCssForm
       end
 
       def field_group_collection_input_checked?(checked, obj, input_value)
-        checked == input_value || Array(checked).try(:include?, input_value) || checked == obj || Array(checked).try(:include?, obj)
+        checked == input_value || Array(checked).try(:include?,
+                                                     input_value) ||  checked == obj ||  Array(checked).try(:include?,
+                                                                                                            obj)
       end
     end
   end

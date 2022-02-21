@@ -26,23 +26,21 @@ module TailwindCssForm
     def field_options(name, options)
       opts = options
       opts[:class] = field_classes(name)
-      if error?(name)
-        opts[:aria] = {invalid: true, describedby: "#{name.to_s}-error"}
-      end
+      opts[:aria] = { invalid: true, describedby: "#{name}-error" } if error?(name)
 
       opts
     end
 
     def field_classes(name)
-      classes = "appearance-none block w-full h-10 px-3 py-2 border rounded-md shadow-sm focus:outline-none sm:text-sm".split(' ')
-      
+      classes = "appearance-none block w-full h-10 px-3 py-2 border rounded-md shadow-sm focus:outline-none sm:text-sm".split
+
       if error?(name)
-        classes.concat %w(border-red-300 placeholder-gray-400 focus:ring-red-500 focus:border-red-500 pr-10)
+        classes.concat %w[border-red-300 placeholder-gray-400 focus:ring-red-500 focus:border-red-500 pr-10]
       else
-        classes.concat %w(border-gray-300 placeholder-gray-400 focus:ring-cyan-600 focus:border-cyan-600)
+        classes.concat %w[border-gray-300 placeholder-gray-400 focus:ring-cyan-600 focus:border-cyan-600]
       end
-      
-      classes.flatten.compact.join(' ')
+
+      classes.flatten.compact.join(" ")
     end
   end
 end

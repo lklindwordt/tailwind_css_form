@@ -11,7 +11,7 @@ module TailwindCssForm
         def collection_check_boxes_with_tailwind_css(*args)
           html = inputs_collection(*args) do |name, value, options|
             options[:multiple] = true
-            options[:group] = { class: 'mb-2' }
+            options[:group] = { class: "mb-2" }
             check_box(name, options, value, nil)
           end
           hidden_field(args.first, value: "", multiple: true).concat(html)

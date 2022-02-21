@@ -16,15 +16,15 @@ module TailwindCssForm
         options[:text] || options[:label] || object.class.human_attribute_name(method).to_s
       end
 
-      def label_options(method, options)
+      def label_options(_method, options)
         {
           class: label_classes(options)
         }
       end
 
       def label_classes(options)
-        classes = %w(block text-sm font-medium text-gray-700)
-        classes << 'hidden' if options[:hide]
+        classes = %w[block text-sm font-medium text-gray-700]
+        classes << "hidden" if options[:hide]
 
         classes
       end
