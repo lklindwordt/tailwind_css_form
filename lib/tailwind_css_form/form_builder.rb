@@ -12,6 +12,7 @@ module TailwindCssForm
     include TailwindCssForm::Inputs::CheckBox
     include TailwindCssForm::Inputs::CollectionCheckBoxes
     include TailwindCssForm::Inputs::ColorField
+    include TailwindCssForm::Inputs::DateField
     include TailwindCssForm::Inputs::EmailField
     include TailwindCssForm::Inputs::PasswordField
     include TailwindCssForm::Inputs::SelectField
