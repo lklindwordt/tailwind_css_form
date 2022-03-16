@@ -9,7 +9,6 @@ module TailwindCssForm
         def tailwind_css_field(field_name)
           define_method "#{field_name}_with_tailwind_css" do |name, options = {}|
             field_group_builder(name, options) do
-              options[:class] = field_classes(name)
               send("#{field_name}_without_tailwind_css".to_sym, name, field_options(name, options))
             end
           end
