@@ -4,12 +4,12 @@ module TailwindCssForm
   module Helpers
     module TailwindCss
       def button(value = nil, options = {}, &block)
-        set_css_classes button_classes, options
+        set_css_classes TailwindCssForm.config.button_classes.join(" "), options
         super
       end
 
       def submit(name = nil, options = {})
-        set_css_classes button_classes, options
+        set_css_classes TailwindCssForm.config.button_classes.join(" "), options
         super
       end
 

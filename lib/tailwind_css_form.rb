@@ -13,7 +13,7 @@ module TailwindCssForm
     autoload :FieldGroup
     autoload :FieldGroupBuilder
     autoload :Components
-    # autoload :Configuration
+    autoload :Configuration
     autoload :Helpers
     autoload :Inputs
   end
@@ -25,6 +25,14 @@ module TailwindCssForm
       TailwindCssForm::Components.eager_load!
       TailwindCssForm::Helpers.eager_load!
       TailwindCssForm::Inputs.eager_load!
+    end
+
+    def config
+      @config ||= TailwindCssForm::Configuration.new
+    end
+
+    def configure
+      yield config
     end
   end
 

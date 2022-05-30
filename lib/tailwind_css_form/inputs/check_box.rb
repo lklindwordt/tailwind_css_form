@@ -21,27 +21,27 @@ module TailwindCssForm
       private
 
       def check_box_builder(name, options, checked_value, unchecked_value)
-        tag.div(class: "flex items-center h-5") do
+        tag.div(class: TailwindCssForm.config.check_box_wrapper_classes.join(" ")) do
           check_box_without_tailwind_css(name, check_box_options(options), checked_value, unchecked_value)
         end
       end
 
       def check_box_options(options)
         opts = options
-        opts[:class] = "focus:ring-cyan-600 h-4 w-4 text-cyan-600 border-gray-300 rounded"
+        opts[:class] = TailwindCssForm.config.check_box_classes.join(" ")
 
         opts
       end
 
       def check_box_label(name, options)
-        tag.div(class: "ml-3 text-sm") do
+        tag.div(class: TailwindCssForm.config.check_box_label_wrapper_classes.join(" ")) do
           generate_label(name, options)
         end
       end
 
       def check_box_group_class(options)
         options = {} if options.nil?
-        classes = %w[relative flex items-start]
+        classes = TailwindCssForm.config.check_box_group_classes
         classes << options[:class].split if options.key?(:class)
         classes
       end
