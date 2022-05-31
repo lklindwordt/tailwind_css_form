@@ -44,6 +44,7 @@ module TailwindCssForm
       classes.join(" ")
     end
 
+    # rubocop:disable Layout/LineLength
     def field_error_icon
       tag.div(class: TailwindCssForm.config.field_error_icon_wrapper_classes.join(" ")) do
         "<svg class='#{TailwindCssForm.config.field_error_icon_classes.join(" ")}' x-description='Heroicon name: solid/exclamation-circle' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor' aria-hidden='true'>
@@ -51,6 +52,7 @@ module TailwindCssForm
         </svg>".html_safe
       end
     end
+    # rubocop:enable Layout/LineLength
 
     def field_error_message(name)
       tag.p(class: TailwindCssForm.config.field_error_message_classes.join(" "), id: "#{name}-error") do

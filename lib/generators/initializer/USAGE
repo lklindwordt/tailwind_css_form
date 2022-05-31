@@ -1,0 +1,2 @@
+TailwindCssForm:
+  rails generate initializer tailwind_css_form

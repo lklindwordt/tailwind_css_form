@@ -21,6 +21,7 @@ module TailwindCssForm
         end
       end
 
+      # rubocop:disable Metrics/ParameterLists
       def field_group_collection_input_options(options, text, obj, index, input_value, collection)
         input_options = options.merge(label: text.respond_to?(:call) ? text.call(obj) : obj.send(text))
         if (checked = input_options[:checked])
@@ -31,11 +32,12 @@ module TailwindCssForm
         input_options.except!(:class)
         input_options
       end
+      # rubocop:enable Metrics/ParameterLists
 
       def field_group_collection_input_checked?(checked, obj, input_value)
         checked == input_value || Array(checked).try(:include?,
-                                                     input_value) ||  checked == obj ||  Array(checked).try(:include?,
-                                                                                                            obj)
+                                                     input_value) || checked == obj || Array(checked).try(:include?,
+                                                                                                          obj)
       end
     end
   end

@@ -7,7 +7,7 @@ module TailwindCssForm
       include Base
 
       included do
-        def rich_text_area_with_tailwind_css(name, options={})
+        def rich_text_area_with_tailwind_css(name, options = {})
           options[:class] = [TailwindCssForm.config.rich_text_area_classes.join(" "), options[:class]].compact.join(" ")
           field_group_builder(name, options) do
             rich_text_area_without_tailwind_css(name, options)
