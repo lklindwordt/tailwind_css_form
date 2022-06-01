@@ -38,7 +38,8 @@ module TailwindCssForm
     end
 
     def field_wrapper_classes(name)
-      classes = TailwindCssForm.config.field_wrapper_classes
+      classes = []
+      classes.concat TailwindCssForm.config.field_wrapper_classes
       classes.concat TailwindCssForm.config.field_wrapper_error_classes if error?(name)
 
       classes.join(" ")

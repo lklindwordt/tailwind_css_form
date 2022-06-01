@@ -30,7 +30,8 @@ module TailwindCssForm
     end
 
     def field_classes(name)
-      classes = TailwindCssForm.config.field_classes
+      classes = []
+      classes.concat TailwindCssForm.config.field_classes
 
       if error?(name)
         classes.concat TailwindCssForm.config.field_error_classes
