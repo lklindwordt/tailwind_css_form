@@ -27,10 +27,12 @@ module TailwindCssForm
       end
 
       def check_box_options(options)
-        opts = options
-        opts[:class] = TailwindCssForm.config.check_box_classes.join(" ")
-
-        opts
+        classes = []
+        classes.concat TailwindCssForm.config.check_box_classes
+        classes.concat options[:class].split if options.key?(:class)
+        
+        options[:class] = classes.join(" ")
+        options
       end
 
       def check_box_label(name, options)

@@ -57,7 +57,7 @@ module TailwindCssForm
 
     def field_error_message(name)
       tag.p(class: TailwindCssForm.config.field_error_message_classes.join(" "), id: "#{name}-error") do
-        "#{object.class.human_attribute_name(name)} #{object.errors[name].first}"
+        object.errors[name].first
       end
     end
   end

@@ -10,6 +10,7 @@ TailwindCssForm.configure do |config|
   config.field_classes = %w[shadow-sm block border w-full h-10 px-3 py-2 sm:text-sm rounded-md]
   config.field_error_classes = %w[border-red-300 text-red-900 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:border-red-500 pr-10]
   config.field_regular_classes = %w[border-gray-300 focus:ring-indigo-500 focus:border-indigo-500]
+  config.field_disabled_classes = %w[disabled:cursor-not-allowed disabled:border-gray-200 disabled:bg-gray-50 disabled:text-gray-500]
   config.field_error_icon_classes = %w[h-5 w-5 text-red-500]
   config.field_error_icon_wrapper_classes = %w[absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none]
   config.field_error_message_classes = %w[mt-2 text-sm text-red-600]
