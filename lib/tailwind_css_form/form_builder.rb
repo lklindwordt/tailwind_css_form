@@ -23,7 +23,7 @@ module TailwindCssForm
     delegate :concat, :tag, :content_tag, :capture, to: :@template
 
     def field_options(name, options)
-      opts = options
+      opts = options.except(:group, :wrapper)
       opts[:class] = field_classes(name, opts)
       opts[:aria] = { invalid: true, describedby: "#{name}-error" } if error?(name)
 
@@ -40,6 +40,7 @@ module TailwindCssForm
         classes.concat TailwindCssForm.config.field_regular_classes
       end
       classes.concat TailwindCssForm.config.field_disabled_classes if options[:disabled]
+      classes.concat options[:class].split(" ") if options&.key?(:class)
 
       classes.join(" ")
     end

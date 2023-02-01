@@ -8,10 +8,10 @@ module TailwindCssForm
       options = args.extract_options!
       method = args.first
 
-      tag.div(class: group_classes(options)) do
+      tag.div(class: group_classes(options[:group])) do
         field_group_content(
           generate_label(method, options[:label]),
-          field_wrapper(method, options, &block),
+          field_wrapper(method, options[:wrapper], &block),
           method
         )
       end
@@ -23,24 +23,24 @@ module TailwindCssForm
       concat(field_error_message(name)) if error?(name)
     end
 
-    def field_wrapper(method, _options, &block)
-      tag.div(class: field_wrapper_classes(method)) do
+    def field_wrapper(method, options = {}, &block)
+      tag.div(class: field_wrapper_classes(method, options)) do
         concat(capture(&block))
         concat(field_error_icon) if error?(method)
       end
     end
 
-    def group_classes(options)
-      return "" unless options.key?(:group)
-      return "" unless options[:group].key?(:class)
+    def group_classes(options = {})
+      return "" unless options&.key?(:class)
 
-      options[:group][:class]
+      options[:class]
     end
 
-    def field_wrapper_classes(name)
+    def field_wrapper_classes(name, options = {})
       classes = []
       classes.concat TailwindCssForm.config.field_wrapper_classes
       classes.concat TailwindCssForm.config.field_wrapper_error_classes if error?(name)
+      classes.concat options[:class].split(" ") if options&.key?(:class)
 
       classes.join(" ")
     end
