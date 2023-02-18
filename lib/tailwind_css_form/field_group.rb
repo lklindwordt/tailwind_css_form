@@ -8,7 +8,7 @@ module TailwindCssForm
       options = args.extract_options!
       method = args.first
 
-      tag.div(class: group_classes(options[:group])) do
+      tag.div(class: group_classes(options[:group]), data: group_data(options[:group]) ) do
         field_group_content(
           generate_label(method, options[:label]),
           field_wrapper(method, options[:wrapper], &block),
@@ -34,6 +34,12 @@ module TailwindCssForm
       return "" unless options&.key?(:class)
 
       options[:class]
+    end
+
+    def group_data(options = {}) 
+      return "" unless options&.key?(:data)
+
+      options[:data]
     end
 
     def field_wrapper_classes(name, options = {})

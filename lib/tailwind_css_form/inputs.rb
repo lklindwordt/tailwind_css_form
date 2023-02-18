@@ -11,6 +11,7 @@ module TailwindCssForm
     autoload :ColorField
     autoload :DateField
     autoload :EmailField
+    autoload :ExtendedSelect
     autoload :PasswordField
     autoload :RichTextArea
     autoload :SelectField

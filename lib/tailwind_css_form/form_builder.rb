@@ -14,6 +14,7 @@ module TailwindCssForm
     include TailwindCssForm::Inputs::ColorField
     include TailwindCssForm::Inputs::DateField
     include TailwindCssForm::Inputs::EmailField
+    include TailwindCssForm::Inputs::ExtendedSelect
     include TailwindCssForm::Inputs::PasswordField
     include TailwindCssForm::Inputs::RichTextArea
     include TailwindCssForm::Inputs::SelectField
