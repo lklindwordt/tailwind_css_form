@@ -12,9 +12,9 @@ module TailwindCssForm
     include TailwindCssForm::Inputs::CheckBox
     include TailwindCssForm::Inputs::CollectionCheckBoxes
     include TailwindCssForm::Inputs::ColorField
+    include TailwindCssForm::Inputs::ComboboxField
     include TailwindCssForm::Inputs::DateField
     include TailwindCssForm::Inputs::EmailField
-    include TailwindCssForm::Inputs::ExtendedSelect
     include TailwindCssForm::Inputs::PasswordField
     include TailwindCssForm::Inputs::RichTextArea
     include TailwindCssForm::Inputs::SelectField
@@ -41,7 +41,7 @@ module TailwindCssForm
         classes.concat TailwindCssForm.config.field_regular_classes
       end
       classes.concat TailwindCssForm.config.field_disabled_classes if options[:disabled]
-      classes.concat options[:class].split(" ") if options&.key?(:class)
+      classes.concat options[:class].split if options&.key?(:class)
 
       classes.join(" ")
     end

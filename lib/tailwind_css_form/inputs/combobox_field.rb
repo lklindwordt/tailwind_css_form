@@ -2,12 +2,12 @@
 
 module TailwindCssForm
   module Inputs
-    module ExtendedSelect
+    module ComboboxField
       extend ActiveSupport::Concern
       include Base
 
       included do
-        def extended_select(name, _choices = nil, options = {}, html_options = {})
+        def combobox(name, _choices = nil, options = {}, html_options = {})
           html_options = html_options.reverse_merge(class: field_classes(name, options))
           field_group_builder(name, options) do
             "wusa"

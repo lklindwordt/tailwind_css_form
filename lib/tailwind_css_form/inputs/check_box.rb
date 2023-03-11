@@ -30,7 +30,7 @@ module TailwindCssForm
         classes = []
         classes.concat TailwindCssForm.config.check_box_classes
         classes.concat options[:class].split if options.key?(:class)
-        
+
         options[:class] = classes.join(" ")
         options
       end

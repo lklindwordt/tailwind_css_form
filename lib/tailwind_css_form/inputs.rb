@@ -9,9 +9,9 @@ module TailwindCssForm
     autoload :CheckBox
     autoload :CollectionCheckBoxes
     autoload :ColorField
+    autoload :ComboboxField
     autoload :DateField
     autoload :EmailField
-    autoload :ExtendedSelect
     autoload :PasswordField
     autoload :RichTextArea
     autoload :SelectField
