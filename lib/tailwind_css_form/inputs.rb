@@ -12,6 +12,7 @@ module TailwindCssForm
     autoload :ComboboxField
     autoload :DateField
     autoload :EmailField
+    autoload :FileField
     autoload :PasswordField
     autoload :RichTextArea
     autoload :SelectField
