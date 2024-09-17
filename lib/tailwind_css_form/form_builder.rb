@@ -21,6 +21,7 @@ module TailwindCssForm
     include TailwindCssForm::Inputs::SelectField
     include TailwindCssForm::Inputs::TextArea
     include TailwindCssForm::Inputs::TextField
+    include TailwindCssForm::Inputs::TimeField
 
     delegate :concat, :tag, :content_tag, :capture, to: :@template
 

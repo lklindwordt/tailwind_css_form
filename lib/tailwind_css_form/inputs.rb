@@ -18,5 +18,6 @@ module TailwindCssForm
     autoload :SelectField
     autoload :TextArea
     autoload :TextField
+    autoload :TimeField
   end
 end
