@@ -8,6 +8,7 @@ module TailwindCssForm
     autoload :InputsCollection
     autoload :CheckBox
     autoload :CollectionCheckBoxes
+    autoload :CollectionRadioButtons
     autoload :ColorField
     autoload :ComboboxField
     autoload :DateField
@@ -18,5 +19,6 @@ module TailwindCssForm
     autoload :SelectField
     autoload :TextArea
     autoload :TextField
+    autoload :TimeField
   end
 end
