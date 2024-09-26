@@ -15,6 +15,7 @@ module TailwindCssForm
     autoload :EmailField
     autoload :FileField
     autoload :PasswordField
+    autoload :RadioButton
     autoload :RichTextArea
     autoload :SelectField
     autoload :TextArea

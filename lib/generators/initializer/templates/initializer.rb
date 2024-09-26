@@ -17,4 +17,6 @@ TailwindCssForm.configure do |config|
   config.field_wrapper_classes = %w[mt-1]
   config.field_wrapper_error_classes = %w[relative rounded-md shadow-sm]
   config.rich_text_area_classes = %w[trix-content min-h-10]
+  config.radio_button_classes = %w[h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600]
+  config.radio_button_wrapper_classes = %w[flex items-center gap-2]
 end

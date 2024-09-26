@@ -18,6 +18,7 @@ module TailwindCssForm
     include TailwindCssForm::Inputs::EmailField
     include TailwindCssForm::Inputs::FileField
     include TailwindCssForm::Inputs::PasswordField
+    include TailwindCssForm::Inputs::RadioButton
     include TailwindCssForm::Inputs::RichTextArea
     include TailwindCssForm::Inputs::SelectField
     include TailwindCssForm::Inputs::TextArea

@@ -9,14 +9,20 @@ module TailwindCssForm
       included do
         def collection_radio_buttons_with_tailwind_css(*args)
           html = inputs_collection(*args) do |name, value, options|
-            options[:multiple] = true
-            options[:group] = { class: TailwindCssForm.config.collection_check_boxes_classes.join(" ") }
-            check_box(name, options, value, nil)
+            radio_button(name, value, collection_radio_button_opts(options))
           end
-          hidden_field(args.first, value: "", multiple: true).concat(html)
         end
 
         tailwind_css_alias :collection_radio_buttons
+      end
+
+      private
+
+      def collection_radio_button_opts(options)
+        {
+          label: { hide: true }, option: { text: options[:label] },
+          data: options[:data] || {}
+        }
       end
     end
   end
