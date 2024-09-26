@@ -11,12 +11,14 @@ module TailwindCssForm
     include TailwindCssForm::Inputs::Base
     include TailwindCssForm::Inputs::CheckBox
     include TailwindCssForm::Inputs::CollectionCheckBoxes
+    include TailwindCssForm::Inputs::CollectionRadioButtons
     include TailwindCssForm::Inputs::ColorField
     include TailwindCssForm::Inputs::ComboboxField
     include TailwindCssForm::Inputs::DateField
     include TailwindCssForm::Inputs::EmailField
     include TailwindCssForm::Inputs::FileField
     include TailwindCssForm::Inputs::PasswordField
+    include TailwindCssForm::Inputs::RadioButton
     include TailwindCssForm::Inputs::RichTextArea
     include TailwindCssForm::Inputs::SelectField
     include TailwindCssForm::Inputs::TextArea
