@@ -36,6 +36,7 @@ module TailwindCssForm
       opts
     end
 
+    # rubocop:disable Metrics/AbcSize
     def field_classes(name, options)
       classes = []
       classes.concat TailwindCssForm.config.field_classes
@@ -50,5 +51,6 @@ module TailwindCssForm
 
       classes.join(" ")
     end
+    # rubocop:enable Metrics/AbcSize
   end
 end

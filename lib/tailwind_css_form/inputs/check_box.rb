@@ -37,7 +37,7 @@ module TailwindCssForm
 
       def check_box_label(name, options)
         tag.div(class: TailwindCssForm.config.check_box_label_wrapper_classes.join(" ")) do
-          generate_label(name, options[:label])
+          generate_label(name, options)
         end
       end
 

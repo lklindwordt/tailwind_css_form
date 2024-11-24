@@ -8,7 +8,7 @@ module TailwindCssForm
 
       included do
         def collection_radio_buttons_with_tailwind_css(*args)
-          html = inputs_collection(*args) do |name, value, options|
+          inputs_collection(*args) do |name, value, options|
             radio_button(name, value, collection_radio_button_opts(options))
           end
         end

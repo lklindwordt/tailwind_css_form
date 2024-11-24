@@ -44,7 +44,7 @@ module TailwindCssForm
       end
 
       def radio_button_label(name, options)
-        generate_label(name, options[:label])
+        generate_label(name, options)
       end
     end
   end
