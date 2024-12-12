@@ -9,6 +9,7 @@ module TailwindCssForm
 
       def generate_label(method, options = {})
         options = {} if options.nil?
+        options = options[:label] || {}
         label(method, label_text(method, options), label_options(method, options))
       end
 
