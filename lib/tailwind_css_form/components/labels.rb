@@ -14,6 +14,8 @@ module TailwindCssForm
       end
 
       def label_text(method, options)
+        return options if options.is_a? String
+
         options[:text] || options[:label] || object.class.human_attribute_name(method).to_s
       end
 
@@ -25,7 +27,7 @@ module TailwindCssForm
 
       def label_classes(options)
         classes = %w[block text-sm font-medium text-gray-700]
-        classes << "hidden" if options[:hide]
+        classes << "hidden" if options.is_a?(Hash) && options[:hide]
 
         classes
       end
