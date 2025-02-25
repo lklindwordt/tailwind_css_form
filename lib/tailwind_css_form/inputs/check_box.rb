@@ -43,8 +43,9 @@ module TailwindCssForm
 
       def check_box_group_class(options)
         options = {} if options.nil?
-        classes = TailwindCssForm.config.check_box_group_classes
-        classes << options[:class] if options.key?(:class)
+        classes = []
+        classes.concat TailwindCssForm.config.check_box_group_classes
+        classes.concat options[:class] if options.key?(:class)
         classes.uniq
       end
     end
