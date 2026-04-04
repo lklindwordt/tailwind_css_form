@@ -17,10 +17,10 @@ module TailwindCssForm
     end
 
     def label_opts(options)
-      options = {} if options.nil?
+      options = {} if options.nil? || !options.is_a?(Hash)
       options.merge({
-                      text: options&.key?(:text) ? options[:text] : "",
-                      hide: options&.key?(:hide) ? options[:hide] : false
+                      text: options.key?(:text) ? options[:text] : "",
+                      hide: options.key?(:hide) ? options[:hide] : false
                     })
     end
   end

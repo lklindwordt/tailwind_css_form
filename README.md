@@ -24,6 +24,36 @@ Or install it yourself as:
 
 TODO: Write usage instructions here
 
+### JavaScript Setup
+
+This gem includes Stimulus controllers for enhanced form interactions. To use them, you need to import the controllers in your application.
+
+#### Using importmap-rails
+
+Add to your `config/importmap.rb`:
+
+```ruby
+pin "tailwind_css_form", to: "tailwind_css_form/controllers/index.js"
+```
+
+Then import in your `app/javascript/controllers/index.js`:
+
+```javascript
+import "tailwind_css_form"
+```
+
+#### Using jsbundling-rails (esbuild, webpack, rollup)
+
+Import in your `app/javascript/application.js`:
+
+```javascript
+import "tailwind_css_form/controllers"
+```
+
+#### Available Controllers
+
+- **combobox**: Provides dropdown functionality for combobox fields with filtering support
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

@@ -9,7 +9,7 @@ module TailwindCssForm
         def tailwind_css_field(field_name)
           define_method "#{field_name}_with_tailwind_css" do |name, options = {}|
             field_group_builder(name, options) do
-              send("#{field_name}_without_tailwind_css".to_sym, name, field_options(name, options))
+              send(:"#{field_name}_without_tailwind_css", name, field_options(name, options))
             end
           end
 
@@ -17,8 +17,8 @@ module TailwindCssForm
         end
 
         def tailwind_css_alias(field_name)
-          alias_method "#{field_name}_without_tailwind_css".to_sym, field_name
-          alias_method field_name, "#{field_name}_with_tailwind_css".to_sym
+          alias_method :"#{field_name}_without_tailwind_css", field_name
+          alias_method field_name, :"#{field_name}_with_tailwind_css"
         end
       end
     end

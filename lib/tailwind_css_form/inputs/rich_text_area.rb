@@ -14,7 +14,8 @@ module TailwindCssForm
           end
         end
 
-        tailwind_css_alias :rich_text_area
+        # Only alias if the method exists (requires Action Text)
+        tailwind_css_alias :rich_text_area if method_defined?(:rich_text_area)
       end
     end
   end

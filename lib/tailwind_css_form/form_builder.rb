@@ -36,7 +36,7 @@ module TailwindCssForm
       opts
     end
 
-    # rubocop:disable Metrics/AbcSize
+    # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     def field_classes(name, options)
       classes = []
       classes.concat TailwindCssForm.config.field_classes
@@ -47,10 +47,13 @@ module TailwindCssForm
         classes.concat TailwindCssForm.config.field_regular_classes
       end
       classes.concat TailwindCssForm.config.field_disabled_classes if options[:disabled]
-      classes.concat options[:class].split if options&.key?(:class)
+
+      if options&.key?(:class)
+        classes.concat(Array(options[:class]).flat_map { |c| c.is_a?(String) ? c.split : c })
+      end
 
       classes.join(" ")
     end
-    # rubocop:enable Metrics/AbcSize
+    # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
   end
 end

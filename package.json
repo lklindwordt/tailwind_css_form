@@ -1,0 +1,25 @@
+{
+  "name": "tailwind-css-form",
+  "version": "0.6.0",
+  "description": "Stimulus controllers for TailwindCssForm Rails gem",
+  "main": "app/assets/javascripts/tailwind_css_form/controllers/index.js",
+  "files": [
+    "app/assets/javascripts/tailwind_css_form/controllers/**/*"
+  ],
+  "peerDependencies": {
+    "@hotwired/stimulus": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/klind/tailwind_css_form.git"
+  },
+  "keywords": [
+    "rails",
+    "stimulus",
+    "tailwind",
+    "forms",
+    "combobox"
+  ],
+  "author": "",
+  "license": "MIT"
+}
