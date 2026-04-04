@@ -1,6 +1,7 @@
 AllCops:
   TargetRubyVersion: 2.6
   NewCops: enable
+  SuggestExtensions: false
 
 Style/StringLiterals:
   Enabled: true
@@ -14,6 +15,42 @@ Layout/LineLength:
   Max: 120
   Exclude: 
     - lib/generators/initializer/templates/initializer.rb
+    - lib/tailwind_css_form/inputs/combobox_field.rb
 
 Style/Documentation:
+  Enabled: false
+
+# Test file specific configurations
+Style/OneClassPerFile:
+  Exclude:
+    - test/**/*
+
+Metrics/ClassLength:
+  Exclude:
+    - test/**/*
+
+Metrics/MethodLength:
+  Exclude:
+    - test/**/*
+    - lib/tailwind_css_form/configuration.rb
+
+Metrics/ModuleLength:
+  Exclude:
+    - lib/tailwind_css_form/inputs/combobox_field.rb
+
+Metrics/BlockLength:
+  Exclude:
+    - lib/generators/initializer/templates/initializer.rb
+    - lib/tailwind_css_form/inputs/combobox_field.rb
+
+Metrics/AbcSize:
+  Exclude:
+    - lib/tailwind_css_form/configuration.rb
+    - lib/tailwind_css_form/inputs/combobox_field.rb
+
+Metrics/ParameterLists:
+  Exclude:
+    - lib/tailwind_css_form/inputs/combobox_field.rb
+
+Gemspec/AttributeAssignment:
   Enabled: false

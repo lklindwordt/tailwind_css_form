@@ -22,12 +22,9 @@ module TailwindCssForm
 
       def radio_button_opts(options)
         # opts = options.except(:group, :wrapper)
-        pp "RADIO BUTTON OPTS"
-        pp options
         opts = options.slice(:data)
         opts[:class] = TailwindCssForm.config.radio_button_classes.join(" ")
 
-        pp opts
         opts
       end
 
